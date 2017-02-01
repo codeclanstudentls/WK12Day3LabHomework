@@ -60,7 +60,7 @@
 	
 	var UI = function(){
 	  this.countries = new Countries();
-	  this
+	  // this.countries.
 	  this.countries.all(function(result){
 	    this.render(result);
 	
@@ -117,7 +117,7 @@
 	  makeRequest: function(method, url, callback, payload){
 	    var request = new XMLHttpRequest();
 	    request.open(method, url);
-	    request.setRequestHeader("Content-type", "application/json");
+	    // request.setRequestHeader("Content-type", "application/json");
 	    request.onload = callback;
 	    request.send(payload);
 	  },
@@ -133,15 +133,15 @@
 	      var jsonString = this.responseText;
 	      countries = JSON.parse(jsonString);
 	
-	      var countries = self.populateCountries(results);
+	      // var countries = self.populateCountries(countries);
 	      console.log(countries);
-	      callback(countries);
+	      // callback(countries);
 	    }
 	  )},
 	
-	  populateCountries: function(countries){
-	    
-	  }
+	  // populateCountries: function(countries){
+	
+	  // }
 	}
 	
 	

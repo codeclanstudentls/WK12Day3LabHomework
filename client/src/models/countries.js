@@ -10,7 +10,7 @@ Countries.prototype = {
   makeRequest: function(method, url, callback, payload){
     var request = new XMLHttpRequest();
     request.open(method, url);
-    request.setRequestHeader("Content-type", "application/json");
+    // request.setRequestHeader("Content-type", "application/json");
     request.onload = callback;
     request.send(payload);
   },
@@ -26,15 +26,15 @@ Countries.prototype = {
       var jsonString = this.responseText;
       countries = JSON.parse(jsonString);
 
-      var countries = self.populateCountries(results);
+      // var countries = self.populateCountries(countries);
       console.log(countries);
-      callback(countries);
+      // callback(countries);
     }
   )},
 
-  populateCountries: function(countries){
-    
-  }
+  // populateCountries: function(countries){
+
+  // }
 }
 
 

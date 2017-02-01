@@ -2,7 +2,7 @@ var Countries = require('../models/countries');
 
 var UI = function(){
   this.countries = new Countries();
-  this
+  // this.countries.
   this.countries.all(function(result){
     this.render(result);
 

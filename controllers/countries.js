@@ -5,7 +5,7 @@ var countryRouter = express.Router();
 var countries = require('../client/src/models/countries')();
 var Country = require('../client/src/models/country');
 
-var CountryQuery = require('../client/db/countryQuery.js');
+var CountryQuery = require('../db/countryQuery.js');
 var query = new CountryQuery();
 
 
