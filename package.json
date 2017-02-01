@@ -10,7 +10,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "mongodb": "^2.2.22",
-    "webpack": "^2.2.1"
+    "express": "^4.13.4",
+    "mongodb": "^2.2.22"
+  },
+  "devDependencies": {
+    "body-parser": "^1.15.2",
+    "mocha": "^3.0.2",
+    "webpack": "1.12.15"
   }
 }

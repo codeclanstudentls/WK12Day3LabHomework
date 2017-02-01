@@ -60,6 +60,7 @@
 	
 	var UI = function(){
 	  this.countries = new Countries();
+	  this
 	  this.countries.all(function(result){
 	    this.render(result);
 	
@@ -73,10 +74,14 @@
 	    p.innerText = label + text;
 	    return p;
 	  },
+	
+	
 	  appendText: function(element, text, label){
 	    var pTag = this.createText(text, label);
 	    element.appendChild(pTag);
 	  },
+	
+	
 	  render: function(countries){
 	    var container = document.getElementById('countries');
 	
@@ -98,9 +103,66 @@
 
 /***/ },
 /* 2 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var Country = __webpack_require__(3);
+	
+	var countries = null;
+	
+	var Countries = function() {
+	
+	}
+	
+	Countries.prototype = {
+	  makeRequest: function(method, url, callback, payload){
+	    var request = new XMLHttpRequest();
+	    request.open(method, url);
+	    request.setRequestHeader("Content-type", "application/json");
+	    request.onload = callback;
+	    request.send(payload);
+	  },
+	
+	  
+	
+	  all: function(callback) {
+	    var self = this;
+	    this.makeRequest("GET", "https://restcountries.eu/rest/v1/all", function(){
+	      if (this.status !== 200){
+	        return;
+	      }
+	      var jsonString = this.responseText;
+	      countries = JSON.parse(jsonString);
+	
+	      var countries = self.populateCountries(results);
+	      console.log(countries);
+	      callback(countries);
+	    }
+	  )},
+	
+	  populateCountries: function(countries){
+	    
+	  }
+	}
+	
+	
+	
+	
+	
+	
+	module.exports = Countries;
+
+
+/***/ },
+/* 3 */
 /***/ function(module, exports) {
 
-
+	var Country = function(options) {
+	  this.name = options.name;
+	  this.capital = options.capital;
+	  this.latlng = options.latlng;
+	}
+	
+	module.exports = Country;
 
 /***/ }
 /******/ ]);

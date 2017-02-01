@@ -2,6 +2,7 @@ var Countries = require('../models/countries');
 
 var UI = function(){
   this.countries = new Countries();
+  this
   this.countries.all(function(result){
     this.render(result);
 
@@ -15,10 +16,14 @@ UI.prototype = {
     p.innerText = label + text;
     return p;
   },
+
+
   appendText: function(element, text, label){
     var pTag = this.createText(text, label);
     element.appendChild(pTag);
   },
+
+
   render: function(countries){
     var container = document.getElementById('countries');
 
