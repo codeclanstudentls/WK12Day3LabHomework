@@ -25,21 +25,14 @@ Countries.prototype = {
       }
       var jsonString = this.responseText;
       countries = JSON.parse(jsonString);
-
-      // var countries = self.populateCountries(countries);
-      console.log(countries);
-      // callback(countries);
-    }
-  )},
-
-  // populateCountries: function(countries){
-
-  // }
-}
+      callback(countries);    
+      }
+    )}
+  }
 
 
 
 
 
 
-module.exports = Countries;
+  module.exports = Countries;
