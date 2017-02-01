@@ -36,17 +36,17 @@ UI.prototype = {
   render: function(countries){
     var container = document.getElementById('countries');
 
-    for (var country of countries){
-      var li = document.createElement('li');
-      this.appendText(li, country.name, 'Country: ');
-      this.appendText(li, country.capital, 'Capital City : ');
-      this.appendText(li, country.latlng, 'Coordinates: ');
+    // for (var country of countries){
+    //   var li = document.createElement('li');
+    //   this.appendText(li, country.name, 'Country: ');
+    //   this.appendText(li, country.capital, 'Capital City : ');
+    //   this.appendText(li, country.latlng, 'Coordinates: ');
     
-      container.appendChild(li);
+    //   container.appendChild(li);
 
-    }
+    // }
 
-    this.createDropDown(countryList);
+    this.createDropDown(countries);
     // var select = document.querySelector('select');
     // select.onchange = function() {
     //   var country = this.value;
